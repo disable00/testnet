@@ -85,3 +85,4 @@ docker run --env-file .env --name pokrovsky-bot --restart unless-stopped pokrovs
 
 MIT (или задайте свою).
 # moyproject
+# testnet
