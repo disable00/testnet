@@ -26,7 +26,7 @@ class Settings:
 
     # Прочее
     TZ: str = os.getenv("TZ", "Europe/Moscow")
-    USER_AGENT: str = os.getenv("USER_AGENT", "ScheduleBot/1.0")
+    USER_AGENT: str = os.getenv("USER_AGENT", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
 
     # Донаты
     DONATE_CRYPTOBOT_URL: str = os.getenv("DONATE_CRYPTOBOT_URL", "")
@@ -36,4 +36,12 @@ class Settings:
 settings = Settings()
 
 MSK = ZoneInfo(settings.TZ or "Europe/Moscow")
-HEADERS = {"User-Agent": settings.USER_AGENT}
+HEADERS = {
+    "User-Agent": settings.USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "ru-RU,ru;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "DNT": "1",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+}
